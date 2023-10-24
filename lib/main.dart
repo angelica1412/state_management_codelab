@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  // runApp(MyStatelessApp());
-  runApp(MyStatefulWidgetApp());
+  runApp(MyStatelessApp()); 
+  // runApp(MyStatefulWidgetApp());
 }
+
+ int counter = 0;
 
 class MyStatelessApp extends StatelessWidget {
   @override
@@ -28,6 +30,8 @@ class CounterWidget extends StatelessWidget {
           SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
+              counter++;
+              print(counter);
               // TODO: Increment counter
             },
             child: Text('Increment'),
@@ -44,11 +48,11 @@ class MyStatefulWidgetApp extends StatefulWidget {
 }
 
 class _MyStatefulWidgetAppState extends State<MyStatefulWidgetApp> {
-  int counter = 0;
 
   void incrementCounter() {
     setState(() {
       counter++;
+      print(counter);
     });
   }
 
